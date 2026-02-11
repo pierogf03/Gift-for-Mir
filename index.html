@@ -13,18 +13,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="now-playing hidden" id="nowPlaying" aria-live="polite">
+      🎵 Sonando: <span id="songTitle">Sin canción</span>
+    </div>
+
+    <canvas class="confetti-layer hidden" id="confettiCanvas" aria-hidden="true"></canvas>
+    <div class="hearts-layer hidden" id="heartsLayer" aria-hidden="true"></div>
+
     <main class="app" id="app">
       <section class="card card--intro" id="introCard">
         <h1>Mir, tengo que hacerte una pregunta demasiado super importante... importantísima.</h1>
         <p class="subtitle">¿Estás segura de continuar?</p>
-        <button class="btn btn--yes" id="continueBtn">Continuar 💌</button>
+
+        <div class="single-action">
+          <button class="btn btn--continue" id="continueBtn">Sí, continuar 💌</button>
+        </div>
       </section>
 
       <section class="card card--question hidden" id="questionCard">
         <p class="tag">🐾 Especial para Mir 🐾</p>
         <h2>Mir, ¿quieres ser mi San Valentín? 💘</h2>
         <p class="subtitle">
-          Prometo muchas risas, ternura estilo Chiikawa y muchísimos gatitos.
+          Prometo muchas risas, ternura estilo Chiikawa, muchos corazones y gatitos.
         </p>
 
         <div class="cat-row" aria-hidden="true">
@@ -53,7 +63,8 @@
       </section>
     </main>
 
-    <audio id="sadAudio" src="" preload="auto" loop></audio>
+    <audio id="loveAudio" data-song-title="Canción romántica" src="" preload="auto" loop></audio>
+    <audio id="sadAudio" data-song-title="Canción triste" src="" preload="auto" loop></audio>
 
     <script src="script.js"></script>
   </body>

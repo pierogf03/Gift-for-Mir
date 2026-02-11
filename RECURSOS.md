@@ -50,5 +50,31 @@ Este proyecto deja espacios vacíos para que tú pongas tus propios recursos.
 <audio id="sadAudio" src="./assets/cancion-triste.mp3" preload="auto" loop></audio>
 ```
 
+
+## 4) Canción romántica (cuando responde "Sí")
+- Archivo: `index.html`
+- Elemento: `<audio id="loveAudio" ...></audio>`
+- Línea actual:
+
+```html
+<audio id="loveAudio" data-song-title="Canción romántica" src="" preload="auto" loop></audio>
+```
+
+- Qué cambiar:
+  1. Reemplaza `src=""` por la URL o ruta de tu canción romántica.
+  2. Cambia `data-song-title="..."` por el nombre real de la canción para que se vea arriba en pantalla.
+
+- Ejemplo:
+
+```html
+<audio
+  id="loveAudio"
+  data-song-title="Perfect - Ed Sheeran"
+  src="./assets/cancion-romantica.mp3"
+  preload="auto"
+  loop
+></audio>
+```
+
 ## Nota
-Si usas archivos locales, crea una carpeta `assets/` dentro del proyecto y guarda allí los GIFs y la canción.
+Si usas archivos locales, crea una carpeta `assets/` dentro del proyecto y guarda allí los GIFs y canciones.

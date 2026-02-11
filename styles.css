@@ -23,6 +23,48 @@ body {
   color: var(--text);
 }
 
+.now-playing {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 120;
+  background: #ffffffeb;
+  border: 2px solid #ffcde0;
+  color: #a33d70;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-weight: 700;
+}
+
+.confetti-layer,
+.hearts-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 110;
+}
+
+.hearts-layer span {
+  position: absolute;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  animation: floatHeart 2.4s ease-out forwards;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(10px) scale(0.85);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-140px) scale(1.15);
+    opacity: 0;
+  }
+}
+
 .app {
   min-height: 100vh;
   display: grid;
@@ -83,17 +125,27 @@ p {
   flex-wrap: wrap;
 }
 
+.single-action {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .buttons {
   margin-top: 1.25rem;
-  height: 120px;
+  min-height: 120px;
   position: relative;
-  width: min(100%, 400px);
+  width: min(100%, 430px);
   margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .btn {
   border: 0;
-  border-radius: 999px;
+  border-radius: 16px;
   color: white;
   font-size: clamp(1rem, 3.1vw, 1.2rem);
   font-weight: 700;
@@ -112,21 +164,20 @@ p {
   transform: translateY(1px);
 }
 
-.btn--yes,
-.btn--no {
-  position: absolute;
-  top: 38px;
+.btn--continue {
+  min-width: min(90%, 330px);
+  background: linear-gradient(135deg, #ff6ba8, #de3f80);
 }
 
 .btn--yes {
-  left: 18%;
-  z-index: 2;
   background: linear-gradient(135deg, var(--yes), var(--yes-dark));
 }
 
 .btn--no {
-  left: 56%;
-  z-index: 1;
+  position: absolute;
+  left: 62%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(135deg, var(--no), var(--no-dark));
 }
 
@@ -195,20 +246,16 @@ body.sad .btn--restart {
   }
 
   .buttons {
-    width: 100%;
-    height: 150px;
-  }
-
-  .btn--yes,
-  .btn--no {
-    top: 50px;
-  }
-
-  .btn--yes {
-    left: 8%;
+    min-height: 150px;
   }
 
   .btn--no {
-    left: 55%;
+    left: 68%;
+  }
+
+  .now-playing {
+    max-width: calc(100vw - 16px);
+    font-size: 0.92rem;
+    text-align: center;
   }
 }
