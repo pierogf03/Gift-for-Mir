@@ -23,9 +23,7 @@ let confettiPieces = [];
 
 function updateNowPlaying(audioElement) {
   const hasSource = Boolean(audioElement.getAttribute('src'));
-  songTitle.textContent = hasSource
-    ? audioElement.dataset.songTitle || 'Canción sin nombre'
-    : 'Sin canción configurada';
+  songTitle.textContent = "Cancioncita de usagi toda bonita";
   nowPlaying.classList.remove('hidden');
 }
 
