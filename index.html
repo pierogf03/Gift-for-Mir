@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mir, ¿quieres ser mi San Valentín?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section class="card card--intro" id="introCard">
+        <h1>Mir, tengo que hacerte una pregunta demasiado super importante... importantísima.</h1>
+        <p class="subtitle">¿Estás segura de continuar?</p>
+        <button class="btn btn--yes" id="continueBtn">Continuar 💌</button>
+      </section>
+
+      <section class="card card--question hidden" id="questionCard">
+        <p class="tag">🐾 Especial para Mir 🐾</p>
+        <h2>Mir, ¿quieres ser mi San Valentín? 💘</h2>
+        <p class="subtitle">
+          Prometo muchas risas, ternura estilo Chiikawa y muchísimos gatitos.
+        </p>
+
+        <div class="cat-row" aria-hidden="true">
+          <span>🐱</span><span>💗</span><span>🐱</span><span>✨</span><span>🐾</span>
+        </div>
+
+        <div class="buttons" id="choiceButtons" role="group" aria-label="Respuesta de San Valentín">
+          <button class="btn btn--yes" id="yesBtn">Sí 💞</button>
+          <button class="btn btn--no" id="noBtn">No 😿</button>
+        </div>
+      </section>
+
+      <section class="card card--result hidden" id="yesCard" aria-live="polite">
+        <h2>¡SÍIIII! 🎉</h2>
+        <p>Gracias, Mir 💖. Aquí va tu Chiikawa bailando para celebrar.</p>
+        <img class="hero-img" id="yesGif" src="" alt="Aquí irá el gif de Chiikawa bailando" />
+        <button class="btn btn--restart" data-restart>Volver al inicio</button>
+      </section>
+
+      <section class="card card--result hidden card--sad" id="noCard" aria-live="polite">
+        <h2>Oh no... 💔</h2>
+        <p>Todo se puso triste... incluso los gatitos.</p>
+        <img class="hero-img" id="noGif" src="" alt="Aquí irá el gif o imagen triste" />
+        <p class="tiny">🎵 Reproduciendo música triste...</p>
+        <button class="btn btn--restart" data-restart>Volver al inicio</button>
+      </section>
+    </main>
+
+    <audio id="sadAudio" src="" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
